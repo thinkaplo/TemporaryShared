@@ -31,13 +31,13 @@ function getLastNonEmptyRow() {
 
 
 function sendInvitation() {
-// Get the form responses
+// Get the form responses. Change range when needed.
   var responses = SpreadsheetApp.getActiveSpreadsheet().getSheetByName("Form responses 1");
   var responses = responses.getRange("A:F").getValues();
 
 // Set the calendar ID and event ID. Change calendarId and eventId when needed
-  var calendarId = 'think.aplo@gmail.com';
-  var eventId = '7o34lo5tq1d4ecmi1noghgoo5e';
+  var calendarId = '{your calendar Id}';
+  var eventId = '{your event Id}';
 
 // Get the calendar event
   var calendar = CalendarApp.getCalendarById(calendarId);
@@ -54,8 +54,8 @@ function sendInvitation() {
 // Send a calendar invitation. Develop this method if email recipient is different from Gmail.
     
 // Send an email confirmation. Change subject and message when needed.
-  var subject = 'Beyond the Basics: Mastering Google Sheets & Workspace Tools.';
-  var message = 'Thank you for completing the subscription form. \nKindly confirm your attendance by accepting the invitation we have sent to your calendar. \nWe look forward to seeing you on Saturday with a positive and eager-to-learn mindset!';
+  var subject = '{your message subject}.';
+  var message = '{your message body}';
 
   MailApp.sendEmail(emailAddress, subject, message);
   
